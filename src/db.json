@@ -1,0 +1,36 @@
+{
+  "seller": [
+    {
+      "id": "e85a",
+      "name": "abc",
+      "email": "abc@abc.com",
+      "password": "abc"
+    },
+    {
+      "id": "031b",
+      "name": "121212",
+      "email": "abc@abc.com",
+      "password": "121212"
+    }
+  ],
+  "products": [
+    {
+      "name": "iphone",
+      "price": 0,
+      "color": "pinkddddddddddddd",
+      "category": "mobile",
+      "description": "good phone",
+      "image": "https://iplanet.one/cdn/shop/files/Family_Stripe_iPhone_15_e7d4b46a-20a4-4e71-939b-2b73eb088f5a.png?v=1695629281&width=84",
+      "id": "8dd7"
+    },
+    {
+      "id": "a247",
+      "name": "shoes",
+      "price": 100,
+      "color": "red",
+      "category": "shoes",
+      "description": "NA",
+      "image": "123.jpg"
+    }
+  ]
+}

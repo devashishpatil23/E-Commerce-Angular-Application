@@ -1,0 +1,86 @@
+<div class="container mt-5">
+  <app-alert [msg]="alertMsg" [type]="alertType"></app-alert>
+  <h2 class="mb-4">Update Product</h2>
+  <form
+    #addProductForm="ngForm"
+    (ngSubmit)="submitProduct(addProductForm.value, addProductForm)"
+  >
+    <div class="form-group">
+      <label for="productName">Product Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="productName"
+        placeholder="Enter product name"
+        name="name"
+        required
+        ngModel="{{ productData?.name }}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="productPrice">Product Price</label>
+      <input
+        type="number"
+        class="form-control"
+        id="productPrice"
+        placeholder="Enter product price"
+        name="price"
+        required
+        ngModel="{{ productData?.image }}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="productColor">Product Color</label>
+      <input
+        type="text"
+        class="form-control"
+        id="productColor"
+        placeholder="Enter product color"
+        name="color"
+        required
+        ngModel="{{ productData?.color }}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input
+        type="text"
+        class="form-control"
+        id="category"
+        placeholder="Enter category"
+        name="category"
+        required
+        ngModel="{{ productData?.category }}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        rows="3"
+        placeholder="Enter product description"
+        name="description"
+        required
+        ngModel="{{ productData?.description }}"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="productImage">Product Image</label>
+      <input
+        type="text"
+        class="form-control"
+        id="productImage"
+        name="image"
+        ngModel="{{ productData?.image }}"
+      />
+    </div>
+    <button
+      [disabled]="addProductForm.invalid"
+      type="submit"
+      class="btn btn-primary"
+    >
+      Update Product
+    </button>
+  </form>
+</div>

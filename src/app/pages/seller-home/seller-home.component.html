@@ -1,0 +1,60 @@
+<div class="container mt-5">
+  <app-alert [msg]="alertMsg" [type]="alertType"></app-alert>
+  <h2 class="mb-4">Product List</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>Product image</th>
+          <th>Product name</th>
+          <th>price</th>
+          <th>Color</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example Product Row -->
+        <tr *ngFor="let item of productList; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <img
+              src="{{ item.image }}"
+              alt="Product Image"
+              class="img-thumbnail"
+              style="width: 50px; height: 50px"
+            />
+          </td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.color }}</td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.description }}.</td>
+
+          <td>
+            <a
+              routerLink="/seller-update-product/{{ item.id }}"
+              class="btn btn-sm btn-primary m-1"
+              href="
+             "
+              ><fa-icon [icon]="faEdit"></fa-icon
+            ></a>
+
+            <button
+              (click)="deleteProduct(item.id)"
+              class="btn btn-sm btn-danger m-1"
+            >
+              <fa-icon [icon]="faTrash"></fa-icon>
+            </button>
+          </td>
+        </tr>
+        <!-- Add more rows dynamically using Angular or other backend logic -->
+        <tr *ngIf="productList?.length == 0">
+          <td colspan="8" class="text-center">No products available</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
