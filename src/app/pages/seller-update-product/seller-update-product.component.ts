@@ -32,16 +32,16 @@ export class SellerUpdateProductComponent implements OnInit {
     this.productService.upadteProduct(data).subscribe((res) => {
       this.alertMsg = 'Product Updated successfully';
       this.alertType = 'primary';
-      this.hideAlert(form);
+      form.resetForm();
+      this.hideAlert();
     });
   }
 
-  hideAlert(form: NgForm) {
+  hideAlert() {
     setTimeout(() => {
       this.alertMsg = '';
       this.alertType = '';
       this.router.navigateByUrl('seller-home');
-      form.resetForm();
-    }, 3000);
+    }, 1000);
   }
 }
