@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <app-alert [msg]="alertMsg" [type]="alertType"></app-alert>
-  <h2 class="mb-4">Update Product</h2>
+  <h2 class="mb-4">Update Product: {{ productData?.name }}</h2>
   <form
     #addProductForm="ngForm"
     (ngSubmit)="submitProduct(addProductForm.value, addProductForm)"

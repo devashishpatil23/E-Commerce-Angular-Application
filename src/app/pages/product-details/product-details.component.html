@@ -1,0 +1,41 @@
+<div class="container py-4">
+  <div *ngIf="productData" class="row">
+    <!-- Product Image -->
+    <div class="col-md-6">
+      <img
+        [src]="productData.image"
+        alt="Product Image"
+        class="img-fluid rounded shadow-sm"
+      />
+    </div>
+
+    <!-- Product Details -->
+    <div class="col-md-6">
+      <h1 class="display-5 mb-3">{{ productData.name }}</h1>
+      <p class="text-muted mb-3">{{ productData.description }}</p>
+
+      <div class="h4 text-primary mb-3">Rs {{ productData.price }}</div>
+
+      <div class="d-flex justify-content-end">
+        <button
+          (click)="handleQuantity('min')"
+          class="btn btn-primary btn quantity"
+        >
+          -
+        </button>
+        <p class="px-2 m-0">{{ productQuatity }}</p>
+        <button
+          (click)="handleQuantity('add')"
+          class="btn btn-primary btn quantity"
+        >
+          +
+        </button>
+      </div>
+      <div class="d-flex justify-content-between mt-3">
+        <button class="btn btn-primary btn">Add to Cart</button>
+
+        <button class="btn btn-primary btn">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>
